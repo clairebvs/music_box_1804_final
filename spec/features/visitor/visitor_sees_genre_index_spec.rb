@@ -29,9 +29,8 @@ describe 'a visitor' do
 
        within "#genre-#{genre.id}" do
          expect(page).to have_content(genre.name)
-       end
-
          click_link "#{genre.name}"
+       end 
          expect(current_path).to eq(genre_path(genre))
     end
   end

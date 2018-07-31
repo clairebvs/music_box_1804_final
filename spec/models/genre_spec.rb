@@ -11,6 +11,7 @@ describe Genre, type: :model do
   end
 
   describe 'instance method' do
+    it 'calculate average rating songs of genre' do
     artist = Artist.create(name: 'Celine')
     song = Song.create(title: 'One', length: 12, play_count: 34, artist_id: artist.id, rating: 4)
     song2 = Song.create(title: 'two', length: 1, play_count: 4, artist_id: artist.id, rating: 4)
@@ -21,5 +22,6 @@ describe Genre, type: :model do
     expected_result = 4
 
     expect(genre.average_rating).to eq(expected_result)
+  end 
   end
 end

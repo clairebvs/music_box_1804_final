@@ -37,16 +37,5 @@ describe 'a visitor' do
       expect(page).to_not have_content(song3.title)
       expect(page).to have_content('Average rating: 4')
     end
-
-=begin
-As a Visitor,
-  When I visit a genre show page,
-    I see the average rating for all songs in this genre
-
-Testing requirements:
-- I should add at least 2 songs for this genre
-- Also include 1 or more songs NOT associated with this genre to ensure these
-  other songs are not included in the average rating
-=end
   end
 end
