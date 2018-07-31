@@ -1,3 +1,6 @@
 class Genre < ApplicationRecord
+  validates_presence_of :name
 
-end 
+  has_many :genre_songs
+  has_many :songs, through: :genre_songs
+end
