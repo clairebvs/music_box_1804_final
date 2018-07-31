@@ -21,15 +21,3 @@ describe 'a visitor' do
     end
   end
 end
-=begin
-
-As a Visitor,
-  When I visit the genre index page,
-    I cannot see the form to create new genres,
-      And I do not have access to any routes that could create a genre.
-    And each genre's name should be a link to that genre's show page.
-
-Testing requirements:
-- I should see at least 2 genres listed
-- All users of the web site see the genres' names as links
-=end

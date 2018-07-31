@@ -2,7 +2,7 @@
   <%= genre.name %>
 <% end %>
 
-<% form_for [:admin, @genre] do |f| %>
+<%= form_for [:admin, @genre] do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
 
