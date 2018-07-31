@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe 'a visitor' do
   describe 'visiting genre show page' do
-    it 'sees the numeric rating for this song' do
+    it 'sees the songs for this genre' do
        artist = Artist.create(name: 'Celine')
        song = Song.create(title: 'One', length: 12, play_count: 34, artist_id: artist.id, rating: 4)
        song2 = Song.create(title: 'two', length: 1, play_count: 4, artist_id: artist.id, rating: 4)
@@ -24,11 +24,12 @@ end
 =begin
 
 As a Visitor,
-  When I visit a genre show page,
-    I see all songs associated with that genre listed on the page.
+  When I visit the genre index page,
+    I cannot see the form to create new genres,
+      And I do not have access to any routes that could create a genre.
+    And each genre's name should be a link to that genre's show page.
 
 Testing requirements:
-- I should see at least 2 songs listed for a genre
-- Also include 1 or more songs that are NOT associated with this genre and ensure
-  they do not appear on the page
+- I should see at least 2 genres listed
+- All users of the web site see the genres' names as links
 =end
