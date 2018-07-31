@@ -14,6 +14,9 @@ describe "An admin" do
       expect(page).to have_content(genre.name)
       expect(page).to have_content(genre2.name)
       expect(page).to have_content(genre3.name)
+
+      fill_in :genre_name, with: 'Rock'
+      click_button 'Create Genre'
     end
   end
 end
