@@ -29,18 +29,10 @@ describe 'a visitor' do
 
        within "#genre-#{genre.id}" do
          expect(page).to have_content(genre.name)
-       end 
+       end
 
          click_link "#{genre.name}"
          expect(current_path).to eq(genre_path(genre))
     end
   end
 end
-=begin
-As a Visitor,
-  When I visit the genre index page,
-    I see all genres in the database.
-
-Testing requirements:
-- users should see at least 2 genres listed on the page
-=end

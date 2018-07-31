@@ -21,7 +21,6 @@ describe "An admin" do
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
     visit admin_genres_path
-    save_and_open_page
 
     fill_in :genre_name, with: 'Funk'
     click_button 'Create Genre'
@@ -29,5 +28,5 @@ describe "An admin" do
     expect(current_path).to eq(admin_genres_path)
     expect(page).to have_content('Funk')
   end
-end
+  end
 end
