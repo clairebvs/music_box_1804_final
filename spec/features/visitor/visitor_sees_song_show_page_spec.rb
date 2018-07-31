@@ -29,13 +29,3 @@ describe 'a visitor' do
     end
   end
 end
-
-=begin
-As a Visitor,
-  When I visit a song show page,
-    I see genre names under a heading that says "Genres for this Song:"
-      and the genres listed are only the genres associated with this song.
-      I should see at least 2 genres listed for a song
-- Also include 1 or more genres that are NOT associated with this song and ensure
-  they do not appear on the page
-=end
