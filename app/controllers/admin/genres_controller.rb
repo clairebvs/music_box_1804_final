@@ -1,5 +1,4 @@
 class Admin::GenresController < Admin::BaseController
-  # before_action :require_admin
 
  def index
    @genres = Genre.all
@@ -12,8 +11,8 @@ class Admin::GenresController < Admin::BaseController
 
  def create
    @genre = Genre.create(genre_params)
-   if @genre.save
-     redirect_to admin_genres_path
+   if current_admin? && @genre.save
+     redirect_to genres_path
    else
      render :index
    end

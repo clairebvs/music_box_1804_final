@@ -10,8 +10,8 @@ describe "An admin" do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
-      visit admin_genres_path
-      # expect(page).to have_content(genre.name)
+      visit genres_path
+
       expect(page).to have_content(genre2.name)
       expect(page).to have_content(genre3.name)
     end
@@ -19,13 +19,13 @@ describe "An admin" do
     it 'sees form to create new genre and goes to index genre and see new genre' do
     admin = User.create(username: "Dee", password: 'password', role: 1)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
-
-    visit admin_genres_path
+    
+    visit genres_path
 
     fill_in :genre_name, with: 'Funk'
     click_button 'Create Genre'
 
-    expect(current_path).to eq(admin_genres_path)
+    expect(current_path).to eq(genres_path)
     expect(page).to have_content('Funk')
   end
   end

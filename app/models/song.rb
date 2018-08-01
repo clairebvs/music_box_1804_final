@@ -6,7 +6,6 @@ class Song < ApplicationRecord
   has_many :genre_songs
   has_many :genres, through: :genre_songs
 
-
   before_save :generate_slug
 
 
