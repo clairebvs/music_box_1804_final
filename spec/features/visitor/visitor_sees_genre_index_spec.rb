@@ -7,7 +7,7 @@ describe 'a visitor' do
        song = Song.create(title: 'One', length: 12, play_count: 34, artist_id: artist.id, rating: 4)
        genre = Genre.create(name: 'Opera')
        genre2 = Genre.create(name: 'Jazz')
-       genre3 = Genre.create(name: 'Pop')
+       genre3 = Genre.create(name: 'Pop') 
 
        visit genres_path
 
@@ -30,7 +30,7 @@ describe 'a visitor' do
        within "#genre-#{genre.id}" do
          expect(page).to have_content(genre.name)
          click_link "#{genre.name}"
-       end 
+       end
          expect(current_path).to eq(genre_path(genre))
     end
   end
